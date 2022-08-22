@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker": "./node_modules/.bin/concurrently \"nodemon server.js\""
   },
-  "author": "",
+  "author": "Luna De Laet",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
