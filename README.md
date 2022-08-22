@@ -16,10 +16,11 @@ a) install
 4. in terminal: npm install -f
 5. in terminal: cd backend
 6. in terminal: npm install
+7. in terminal: npm install nodemon
 
 b) run
 
-7. in terminal: cd backend
-8. in terminal: npm start
-9. in terminal: cd frontend
-10. in terminal: npm start
+1. in terminal: cd backend
+2. in terminal: npm start
+3. in terminal: cd frontend
+4. in terminal: npm start
