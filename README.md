@@ -12,15 +12,13 @@ a) install
 1. download code as zip
 2. unzip folder
 
-in terminal:
-3. cd frontend
-4. npm install -f
-5. cd backend
-6. npm install
+3. in terminal: cd frontend
+4. in terminal: npm install -f
+5. in terminal: cd backend
+6. in terminal: npm install
 
 b) run
-in terminal:
-7. cd backend
-8. npm start
-9. cd frontend
-10. npm start
+7. in terminal: cd backend
+8. in terminal: npm start
+9. in terminal: cd frontend
+10. in terminal: npm start
