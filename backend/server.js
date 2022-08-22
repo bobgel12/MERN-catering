@@ -7,21 +7,21 @@ import productRouter from './routes/productRoutes.js'
 import userRouter from './routes/userRoutes.js'
 import cors from 'cors'
 
-dotenv.config()
+//connect to mongodb:
+// dotenv.config()
 
-//connect to mongodb
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log('connected to db')
-  })
-  .catch((err) => {
-    console.log(err.message)
-  })
+// mongoose
+//   .connect(process.env.MONGODB_URI)
+//   .then(() => {
+//     console.log('connected to db')
+//   })
+//   .catch((err) => {
+//     console.log(err.message)
+//   })
 
 const app = express()
 
-app.use(cors())
+// app.use(cors())
 
 // app.get('/api/products', (req, res) => {
 //   res.send(data.products)

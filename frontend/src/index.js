@@ -7,7 +7,8 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { StoreProvider } from './Store'
 
-fetch('http://127.0.0.1:5000/api/')
+// add code below to work in docker:
+// fetch('http://127.0.0.1:5000/api/')
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
