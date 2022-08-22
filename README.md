@@ -18,6 +18,7 @@ a) install
 6. in terminal: npm install
 
 b) run
+
 7. in terminal: cd backend
 8. in terminal: npm start
 9. in terminal: cd frontend
