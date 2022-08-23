@@ -19,3 +19,8 @@ b) run
 1. in terminal: npm start (start backend)
 2. cd frontend
 3. npm start  (start frontend)
+
+
+Prototype
+-
+https://lunadelaet.github.io/Kevins-Catering/dist/
