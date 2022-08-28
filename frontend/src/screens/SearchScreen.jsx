@@ -33,28 +33,12 @@ const reducer = (state, action) => {
   }
 }
 
-const prices = [
-  {
-    name: '$1 to $50',
-    value: '1-50',
-  },
-  {
-    name: '$51 to $200',
-    value: '51-200',
-  },
-  {
-    name: '$201 to $1000',
-    value: '201-1000',
-  },
-]
-
 export default function SearchScreen() {
   const navigate = useNavigate()
   const { search } = useLocation()
   const sp = new URLSearchParams(search) // /search?category=Shirts
   const category = sp.get('category') || 'all'
   const query = sp.get('query') || 'all'
-  const price = sp.get('price') || 'all'
   const order = sp.get('order') || 'newest'
   const page = sp.get('page') || 1
 
@@ -68,7 +52,7 @@ export default function SearchScreen() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&order=${order}`
+          `/api/products/search?page=${page}&query=${query}&category=${category}&order=${order}`
         )
         dispatch({ type: 'FETCH_SUCCESS', payload: data })
       } catch (err) {
@@ -79,7 +63,7 @@ export default function SearchScreen() {
       }
     }
     fetchData()
-  }, [category, error, order, page, price, query])
+  }, [category, error, order, page, query])
 
   const [categories, setCategories] = useState([])
   useEffect(() => {
@@ -98,9 +82,8 @@ export default function SearchScreen() {
     const filterPage = filter.page || page
     const filterCategory = filter.category || category
     const filterQuery = filter.query || query
-    const filterPrice = filter.price || price
     const sortOrder = filter.order || order
-    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&order=${sortOrder}&page=${filterPage}`
+    return `/search?category=${filterCategory}&query=${filterQuery}&order=${sortOrder}&page=${filterPage}`
   }
   return (
     <div>
@@ -130,27 +113,6 @@ export default function SearchScreen() {
               ))}
             </ul>
           </div>
-          <div>
-            <h3>Price</h3>
-            <ul>
-              <li>
-                <Link
-                  className={'all' === price ? 'text-bold' : ''}
-                  to={getFilterUrl({ price: 'all' })}>
-                  Any
-                </Link>
-              </li>
-              {prices.map((p) => (
-                <li key={p.value}>
-                  <Link
-                    to={getFilterUrl({ price: p.value })}
-                    className={p.value === price ? 'text-bold' : ''}>
-                    {p.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </Col>
         <Col md={9}>
           {loading ? (
@@ -165,10 +127,7 @@ export default function SearchScreen() {
                     {countProducts === 0 ? 'No' : countProducts} Results
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
-                    {price !== 'all' && ' : Price ' + price}
-                    {query !== 'all' ||
-                    category !== 'all' ||
-                    price !== 'all' ? (
+                    {query !== 'all' || category !== 'all' ? (
                       <Button
                         variant='light'
                         onClick={() => navigate('/search')}>
