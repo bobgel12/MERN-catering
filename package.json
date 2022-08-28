@@ -1,21 +1,25 @@
 {
-    "name": "kevins-catering",
-    "version": "1.0.0",
-    "description": "kevins-catering",
-    "main": "index.js",
-    "scripts": {
-        "build": "cd backend && npm install  && cd ../frontend && npm install -f && npm run build",
-        "start": "nodemon backend/server.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/LunaDeLaet/MERN-catering.git"
-    },
-    "author": "Luna De Laet",
-    "license": "ISC",
-    "homepage": "https://github.com/LunaDeLaet/MERN-catering#readme",
-    "dependencies": {
-        "nodemon": "^2.0.19"
-    }
+  "name": "kevins-catering",
+  "version": "1.0.0",
+  "description": "kevins-catering",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install  && cd ../frontend && npm install -f && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LunaDeLaet/MERN-catering.git"
+  },
+  "author": "Luna De Laet",
+  "license": "ISC",
+  "homepage": "https://github.com/LunaDeLaet/MERN-catering#readme",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "bugs": {
+    "url": "https://github.com/LunaDeLaet/MERN-catering/issues"
+  },
+  "devDependencies": {}
 }
