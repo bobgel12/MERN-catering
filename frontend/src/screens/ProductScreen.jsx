@@ -7,8 +7,8 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import { Helmet } from 'react-helmet-async'
-import LoadingBox from './components/LoadingBox'
-import MessageBox from './components/MessageBox'
+import LoadingBox from '../components/LoadingBox'
+import MessageBox from '../components/MessageBox'
 import { getError } from '../utils'
 import { Store } from '../Store'
 
@@ -65,19 +65,19 @@ const ProductScreen = () => {
   return loading ? (
     <LoadingBox />
   ) : error ? (
-    <MessageBox variant="danger">{error}</MessageBox>
+    <MessageBox variant='danger'>{error}</MessageBox>
   ) : (
     <div>
       <Row>
         <Col md={6}>
           <img
-            className="img-large"
+            className='img-large'
             src={product.imageUrl}
             alt={product.name}
           />
         </Col>
         <Col md={6}>
-          <ListGroup variant="flush">
+          <ListGroup variant='flush'>
             <ListGroup.Item>
               <Helmet>
                 <title>{product.name}</title>
@@ -86,9 +86,9 @@ const ProductScreen = () => {
             </ListGroup.Item>
             <ListGroup.Item>{product.description}</ListGroup.Item>
           </ListGroup>
-          <Card className="mt-3">
+          <Card className='mt-3'>
             <Card.Body>
-              <ListGroup variant="flush">
+              <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <Row>
                     <Col>Prijs:</Col>
@@ -96,8 +96,10 @@ const ProductScreen = () => {
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <div className="d-grid">
-                    <Button onClick={addToCartHandler} variant="primary">
+                  <div className='d-grid'>
+                    <Button
+                      onClick={addToCartHandler}
+                      variant='primary'>
                       Aan winkelwagen toevoegen
                     </Button>
                   </div>

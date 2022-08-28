@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
 import { Store } from '../Store'
-import CheckoutSteps from './components/CheckoutSteps'
+import CheckoutSteps from '../components/CheckoutSteps'
 
 export default function ShippingAddressScreen() {
   const navigate = useNavigate()
@@ -53,11 +53,15 @@ export default function ShippingAddressScreen() {
         <title>Shipping Address</title>
       </Helmet>
 
-      <CheckoutSteps step1 step2></CheckoutSteps>
-      <div className="container small-container">
-        <h1 className="my-3">Shipping Address</h1>
+      <CheckoutSteps
+        step1
+        step2></CheckoutSteps>
+      <div className='container small-container'>
+        <h1 className='my-3'>Shipping Address</h1>
         <Form onSubmit={submitHandler}>
-          <Form.Group className="mb-3" controlId="fullName">
+          <Form.Group
+            className='mb-3'
+            controlId='fullName'>
             <Form.Label>Full Name</Form.Label>
             <Form.Control
               value={fullName}
@@ -65,7 +69,9 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="address">
+          <Form.Group
+            className='mb-3'
+            controlId='address'>
             <Form.Label>Address</Form.Label>
             <Form.Control
               value={address}
@@ -73,7 +79,9 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="city">
+          <Form.Group
+            className='mb-3'
+            controlId='city'>
             <Form.Label>City</Form.Label>
             <Form.Control
               value={city}
@@ -81,7 +89,9 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="postalCode">
+          <Form.Group
+            className='mb-3'
+            controlId='postalCode'>
             <Form.Label>Postal Code</Form.Label>
             <Form.Control
               value={postalCode}
@@ -89,7 +99,9 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="country">
+          <Form.Group
+            className='mb-3'
+            controlId='country'>
             <Form.Label>Country</Form.Label>
             <Form.Control
               value={country}
@@ -97,8 +109,10 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-          <div className="mb-3">
-            <Button variant="primary" type="submit">
+          <div className='mb-3'>
+            <Button
+              variant='primary'
+              type='submit'>
               Continue
             </Button>
           </div>

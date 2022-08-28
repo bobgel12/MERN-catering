@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { Store } from '../../Store'
+import { Store } from '../Store'
 
 const Product = (props) => {
   const { product } = props
@@ -30,7 +30,7 @@ const Product = (props) => {
       <Link to={`/products/${product.slug}`}>
         <img
           src={product.imageUrl}
-          className="card-img-top"
+          className='card-img-top'
           alt={product.name}
         />
       </Link>
@@ -40,7 +40,9 @@ const Product = (props) => {
         </Link>
         <Card.Text>€{product.price}</Card.Text>
         {product.countInStock === 0 ? (
-          <Button variant="light" disabled>
+          <Button
+            variant='light'
+            disabled>
             U heeft het maximum aantal bereikt
           </Button>
         ) : (
