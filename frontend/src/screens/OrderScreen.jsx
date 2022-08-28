@@ -114,7 +114,7 @@ export default function OrderScreen() {
                     <Row className='align-items-center'>
                       <Col md={6}>
                         <img
-                          src={item.image}
+                          src={item.imageUrl}
                           alt={item.name}
                           className='img-fluid rounded img-thumbnail'></img>{' '}
                         <Link to={`/product/${item.slug}`}>{item.name}</Link>
