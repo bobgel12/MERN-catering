@@ -153,3 +153,32 @@ h5 {
 .row {
   text-align: center;
 }
+
+
+
+
+
+/* MY OWN CSS */
+
+.card-img-top {
+  height: 300px;
+}
+
+ul {
+list-style: none;
+text-align: left;
+}
+
+
+ul > li > a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: chocolate;
+  line-height: 3rem;
+}
+
+.left {
+  text-align: left;
+}

@@ -88,18 +88,19 @@ export default function SearchScreen() {
   return (
     <div>
       <Helmet>
-        <title>Search Products</title>
+        <title>Zoek gerechten</title>
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Department</h3>
+          <h3 className='left'>Categoriën</h3>
+          <br />
           <div>
             <ul>
               <li>
                 <Link
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}>
-                  Any
+                  Alle gerechten
                 </Link>
               </li>
               {categories.map((c) => (
@@ -113,7 +114,10 @@ export default function SearchScreen() {
               ))}
             </ul>
           </div>
+          <br />
+          <br />
         </Col>
+
         <Col md={9}>
           {loading ? (
             <LoadingBox></LoadingBox>
@@ -124,7 +128,7 @@ export default function SearchScreen() {
               <Row className='justify-content-between mb-3'>
                 <Col md={6}>
                   <div>
-                    {countProducts === 0 ? 'No' : countProducts} Results
+                    {countProducts === 0 ? 'Geen' : countProducts} resultaten
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
                     {query !== 'all' || category !== 'all' ? (
@@ -135,23 +139,24 @@ export default function SearchScreen() {
                       </Button>
                     ) : null}
                   </div>
+                  <br />
+                  <br />
                 </Col>
                 <Col className='text-end'>
-                  Sort by{' '}
+                  Sorteren op{' '}
                   <select
                     value={order}
                     onChange={(e) => {
                       navigate(getFilterUrl({ order: e.target.value }))
                     }}>
-                    <option value='newest'>Newest Arrivals</option>
-                    <option value='lowest'>Price: Low to High</option>
-                    <option value='highest'>Price: High to Low</option>
-                    <option value='toprated'>Avg. Customer Reviews</option>
+                    <option value='newest'>Nieuwste gerechten</option>
+                    <option value='lowest'>Prijs: laag naar hoog</option>
+                    <option value='highest'>Prijs: hoog naar laag</option>
                   </select>
                 </Col>
               </Row>
               {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
+                <MessageBox>Geen gerechten gevonden</MessageBox>
               )}
 
               <Row>

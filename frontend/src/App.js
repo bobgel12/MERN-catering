@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import HomeScreen from './screens/HomeScreen'
-import DessertsScreen from './screens/DessertsScreen'
 import ProductScreen from './screens/ProductScreen'
 import Navbar from 'react-bootstrap/Navbar'
 import Badge from 'react-bootstrap/Badge'
@@ -90,7 +89,7 @@ function App() {
                   <Link
                     to='/cart'
                     className='nav-link'>
-                    Cart
+                    Winkelwagen
                     {cart.cartItems.length > 0 && (
                       <Badge
                         pill
@@ -104,24 +103,24 @@ function App() {
                       title={userInfo.name}
                       id='basic-nav-dropdown'>
                       <LinkContainer to='/profile'>
-                        <NavDropdown.Item>User Profile</NavDropdown.Item>
+                        <NavDropdown.Item>Mijn profiel</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to='/orderhistory'>
-                        <NavDropdown.Item>Order History</NavDropdown.Item>
+                        <NavDropdown.Item>Mijn bestellingen</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
                         className='dropdown-item'
                         to='#signout'
                         onClick={signoutHandler}>
-                        Sign Out
+                        Log uit
                       </Link>
                     </NavDropdown>
                   ) : (
                     <Link
                       className='nav-link'
                       to='/signin'>
-                      Sign In
+                      Log in
                     </Link>
                   )}
                 </Nav>
@@ -137,7 +136,7 @@ function App() {
           }>
           <Nav className='flex-column text-white w-100 p-2'>
             <Nav.Item>
-              <strong>Categories</strong>
+              <strong>Categoriën</strong>
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
@@ -155,7 +154,7 @@ function App() {
             <Routes>
               <Route
                 path='/products'
-                element={<DessertsScreen />}
+                element={<SearchScreen />}
               />
               <Route
                 path='/products/:slug'
@@ -207,7 +206,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className='text-center'>All rights reserved</div>
+          <div className='text-center'></div>
         </footer>
       </div>
     </BrowserRouter>
