@@ -18,13 +18,10 @@ productRouter.post(
     const newProduct = new Product({
       name: 'sample name ' + Date.now(),
       slug: 'sample-name-' + Date.now(),
-      image: '/images/p1.jpg',
+      imageUrl: '/images/p1.jpg',
       price: 0,
       category: 'sample category',
-      brand: 'sample brand',
       countInStock: 0,
-      rating: 0,
-      numReviews: 0,
       description: 'sample description',
     })
     const product = await newProduct.save()
@@ -43,10 +40,9 @@ productRouter.put(
       product.name = req.body.name
       product.slug = req.body.slug
       product.price = req.body.price
-      product.image = req.body.image
+      product.imageUrl = req.body.imageUrl
       product.images = req.body.images
       product.category = req.body.category
-      product.brand = req.body.brand
       product.countInStock = req.body.countInStock
       product.description = req.body.description
       await product.save()
@@ -104,7 +100,6 @@ productRouter.get(
     const page = query.page || 1
     const category = query.category || ''
     const price = query.price || ''
-    const rating = query.rating || ''
     const order = query.order || ''
     const searchQuery = query.query || ''
 
@@ -118,14 +113,7 @@ productRouter.get(
           }
         : {}
     const categoryFilter = category && category !== 'all' ? { category } : {}
-    const ratingFilter =
-      rating && rating !== 'all'
-        ? {
-            rating: {
-              $gte: Number(rating),
-            },
-          }
-        : {}
+
     const priceFilter =
       price && price !== 'all'
         ? {
@@ -143,8 +131,6 @@ productRouter.get(
         ? { price: 1 }
         : order === 'highest'
         ? { price: -1 }
-        : order === 'toprated'
-        ? { rating: -1 }
         : order === 'newest'
         ? { createdAt: -1 }
         : { _id: -1 }

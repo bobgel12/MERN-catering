@@ -87,6 +87,7 @@ export default function ProductListScreen() {
         dispatch({ type: 'FETCH_SUCCESS', payload: data })
       } catch (err) {}
     }
+
     if (successDelete) {
       dispatch({ type: 'DELETE_RESET' })
     } else {
@@ -138,14 +139,14 @@ export default function ProductListScreen() {
     <div>
       <Row>
         <Col>
-          <h1>Producten</h1>
+          <h1>Products</h1>
         </Col>
         <Col className='col text-end'>
           <div>
             <Button
               type='button'
               onClick={createHandler}>
-              Product toevoegen
+              Create Product
             </Button>
           </div>
         </Col>
@@ -167,6 +168,7 @@ export default function ProductListScreen() {
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
+                <th>BRAND</th>
                 <th>ACTIONS</th>
               </tr>
             </thead>
@@ -177,6 +179,7 @@ export default function ProductListScreen() {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.category}</td>
+                  <td>{product.brand}</td>
                   <td>
                     <Button
                       type='button'

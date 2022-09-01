@@ -58,11 +58,10 @@ export default function ProductEditScreen() {
   const [name, setName] = useState('')
   const [slug, setSlug] = useState('')
   const [price, setPrice] = useState('')
-  const [image, setImage] = useState('')
+  const [imageUrl, setImage] = useState('')
   const [images, setImages] = useState([])
   const [category, setCategory] = useState('')
   const [countInStock, setCountInStock] = useState('')
-  const [brand, setBrand] = useState('')
   const [description, setDescription] = useState('')
 
   useEffect(() => {
@@ -100,7 +99,7 @@ export default function ProductEditScreen() {
           name,
           slug,
           price,
-          image,
+          imageUrl,
           images,
           category,
           countInStock,
@@ -199,10 +198,10 @@ export default function ProductEditScreen() {
           </Form.Group>
           <Form.Group
             className='mb-3'
-            controlId='image'>
+            controlId='imageUrl'>
             <Form.Label>Image File</Form.Label>
             <Form.Control
-              value={image}
+              value={imageUrl}
               onChange={(e) => setImage(e.target.value)}
               required
             />
@@ -252,16 +251,6 @@ export default function ProductEditScreen() {
             <Form.Control
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group
-            className='mb-3'
-            controlId='brand'>
-            <Form.Label>Brand</Form.Label>
-            <Form.Control
-              value={brand}
-              onChange={(e) => setBrand(e.target.value)}
               required
             />
           </Form.Group>
