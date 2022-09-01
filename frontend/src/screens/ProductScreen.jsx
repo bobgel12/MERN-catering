@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useContext, useEffect, useReducer } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -26,6 +26,7 @@ const reducer = (state, action) => {
 }
 
 const ProductScreen = () => {
+  const [selectedImage, setSelectedImage] = useState('')
   const navigate = useNavigate()
   const params = useParams()
   const { slug } = params
@@ -72,7 +73,7 @@ const ProductScreen = () => {
         <Col md={6}>
           <img
             className='img-large'
-            src={product.imageUrl}
+            src={selectedImage || product.imageUrl}
             alt={product.name}
           />
         </Col>
@@ -83,6 +84,30 @@ const ProductScreen = () => {
                 <title>{product.name}</title>
               </Helmet>
               <h1>{product.name}</h1>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Row
+                xs={1}
+                md={2}
+                className='g-2'>
+                {[product.imageUrl, ...product.images].map((x) => (
+                  <Col key={x}>
+                    <Card>
+                      <Button
+                        className='thumbnail'
+                        type='button'
+                        variant='light'
+                        onClick={() => setSelectedImage(x)}>
+                        <Card.Img
+                          variant='top'
+                          src={x}
+                          alt='product'
+                        />
+                      </Button>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
             </ListGroup.Item>
             <ListGroup.Item>{product.description}</ListGroup.Item>
           </ListGroup>
