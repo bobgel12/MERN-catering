@@ -92,9 +92,9 @@ export default function UserEditScreen() {
   return (
     <Container className='small-container'>
       <Helmet>
-        <title>Gebruiker bewerken ${userId}</title>
+        <title>Bewerk gebruiker {userId}</title>
       </Helmet>
-      <h1>Gebruiker bewerken {userId}</h1>
+      <h1>Bewerk gebruiker {userId}</h1>
 
       {loading ? (
         <LoadingBox></LoadingBox>
