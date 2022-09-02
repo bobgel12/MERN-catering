@@ -88,7 +88,7 @@ export default function SearchScreen() {
   return (
     <div>
       <Helmet>
-        <title>Zoek gerechten</title>
+        <title>Catalogus</title>
       </Helmet>
       <Row>
         <Col md={3}>

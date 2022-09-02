@@ -45,26 +45,19 @@ main {
 }
 
 .checkout-steps > div {
-  border-bottom: 0.2rem solid #a0a0a0;
-  color: #a0a0a0;
+  border-bottom: 0.2rem solid #fff;
+  color: #fff;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #f08000;
-  color: #f08000;
+  border-bottom: 0.2rem solid #2b75ca;
+  color: #2b75ca;
 }
 
 /* sidebar */
 .navbar-brand {
   font-weight: bold;
 }
-.side-navbar {
-  width: 240px;
-  height: 100%;
-  position: absolute;
-  left: -300px;
-  background-color: #100901;
-  transition: 0.5s;
-}
+
 
 .site-container {
   transition: 0.4s;
@@ -133,7 +126,7 @@ button.thumbnail {
 body {
   font-family: 'Poppins', sans-serif;
   background: #071627;
-  color: #777;
+  color: #fff;
   line-height: 1;
 }
 
@@ -148,6 +141,7 @@ h3,
 h4,
 h5 {
   font-weight: 700;
+  color: #fff;
 }
 
 .row {
@@ -183,8 +177,12 @@ ul > li > a {
   text-align: left;
 }
 
-.card {
+.card, .list-group-item, .img-fluid {
   background-color: #0b325f;
+}
+
+.img-fluid {
+  border: none;
 }
 
 a {
@@ -194,4 +192,8 @@ a {
 a:hover {
   color: #fff;
   text-decoration: none;
+}
+
+div {
+  color: #fff;
 }
