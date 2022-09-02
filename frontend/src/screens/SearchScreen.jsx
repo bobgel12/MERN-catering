@@ -149,7 +149,7 @@ export default function SearchScreen() {
                     onChange={(e) => {
                       navigate(getFilterUrl({ order: e.target.value }))
                     }}>
-                    <option value='newest'>Nieuwste gerechten</option>
+                    <option value='newest'>Recent toegevoegd</option>
                     <option value='lowest'>Prijs: laag naar hoog</option>
                     <option value='highest'>Prijs: hoog naar laag</option>
                   </select>

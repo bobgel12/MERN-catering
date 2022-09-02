@@ -48,7 +48,8 @@ const CartScreen = () => {
         <Col md={8}>
           {cartItems.length === 0 ? (
             <MessageBox>
-              Winkelwagen is leeg. <Link to='/products'>Shop gerechten</Link>
+              Winkelwagen is leeg.{' '}
+              <Link to='/products'>Voeg gerechten toe</Link>
             </MessageBox>
           ) : (
             <ListGroup>

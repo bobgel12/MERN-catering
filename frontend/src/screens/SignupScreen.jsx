@@ -25,7 +25,7 @@ export default function SignupScreen() {
   const submitHandler = async (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      toast.error('Passwords do not match')
+      toast.error('Wachtwoorden komen niet overeen')
       return
     }
     try {
@@ -49,47 +49,59 @@ export default function SignupScreen() {
   }, [navigate, redirect, userInfo])
 
   return (
-    <Container className="small-container">
+    <Container className='small-container'>
       <Helmet>
-        <title>Sign Up</title>
+        <title>Account maken</title>
       </Helmet>
-      <h1 className="my-3">Sign Up</h1>
+      <h1 className='my-3'>Account maken</h1>
       <Form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Name</Form.Label>
-          <Form.Control onChange={(e) => setName(e.target.value)} required />
+        <Form.Group
+          className='mb-3'
+          controlId='name'>
+          <Form.Label>Naam</Form.Label>
+          <Form.Control
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="email">
+        <Form.Group
+          className='mb-3'
+          controlId='email'>
           <Form.Label>Email</Form.Label>
           <Form.Control
-            type="email"
+            type='email'
             required
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
+        <Form.Group
+          className='mb-3'
+          controlId='password'>
+          <Form.Label>Wachtwoord</Form.Label>
           <Form.Control
-            type="password"
+            type='password'
             required
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Form.Group className="mb-3" controlId="confirmPassword">
-            <Form.Label>Confirm Password</Form.Label>
+          <br />
+          <Form.Group
+            className='mb-3'
+            controlId='confirmPassword'>
+            <Form.Label>Bevestig wachtwoord</Form.Label>
             <Form.Control
-              type="password"
+              type='password'
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </Form.Group>
         </Form.Group>
-        <div className="mb-3">
-          <Button type="submit">Sign Up</Button>
+        <div className='mb-3'>
+          <Button type='submit'>Account maken</Button>
         </div>
-        <div className="mb-3">
-          Already have an account?{' '}
-          <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+        <div className='mb-3'>
+          Heeft u al een account?{' '}
+          <Link to={`/signin?redirect=${redirect}`}>Log in</Link>
         </div>
       </Form>
     </Container>
