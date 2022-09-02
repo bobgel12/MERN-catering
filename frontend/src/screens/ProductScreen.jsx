@@ -85,30 +85,7 @@ const ProductScreen = () => {
               </Helmet>
               <h1>{product.name}</h1>
             </ListGroup.Item>
-            <ListGroup.Item>
-              <Row
-                xs={1}
-                md={2}
-                className='g-2'>
-                {[product.imageUrl, ...product.images].map((x) => (
-                  <Col key={x}>
-                    <Card>
-                      <Button
-                        className='thumbnail'
-                        type='button'
-                        variant='light'
-                        onClick={() => setSelectedImage(x)}>
-                        <Card.Img
-                          variant='top'
-                          src={x}
-                          alt='product'
-                        />
-                      </Button>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-            </ListGroup.Item>
+
             <ListGroup.Item>{product.description}</ListGroup.Item>
           </ListGroup>
           <Card className='mt-3'>

@@ -180,6 +180,7 @@ ul > li > a {
 
 .card, .list-group-item, .img-fluid {
   background-color: #0b325f;
+  color: #fff;
 }
 
 .img-fluid {
@@ -197,4 +198,9 @@ a:hover {
 
 div, .table {
   color: #fff;
+}
+
+.alert > a {
+  color: chocolate;
+  text-decoration: underline;
 }
