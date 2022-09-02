@@ -14,7 +14,7 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: green;
+  background-color: chocolate;
   color: #fff;
 }
 .products {
@@ -181,4 +181,17 @@ ul > li > a {
 
 .left {
   text-align: left;
+}
+
+.card {
+  background-color: #0b325f;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
 }

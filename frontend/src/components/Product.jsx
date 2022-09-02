@@ -39,17 +39,6 @@ const Product = (props) => {
           <Card.Title>{product.name}</Card.Title>
         </Link>
         <Card.Text>€{product.price}</Card.Text>
-        {product.countInStock === 0 ? (
-          <Button
-            variant='light'
-            disabled>
-            U heeft het maximum aantal bereikt
-          </Button>
-        ) : (
-          <Button onClick={() => addToCartHandler(product)}>
-            Aan winkelwagen toevoegen
-          </Button>
-        )}
       </Card.Body>
     </Card>
   )
