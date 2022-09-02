@@ -16,6 +16,7 @@ main {
 .btn-outline-primary {
   background-color: chocolate;
   color: #fff;
+  border: none;
 }
 .products {
   display: flex;
@@ -194,6 +195,6 @@ a:hover {
   text-decoration: none;
 }
 
-div {
+div, .table {
   color: #fff;
 }
