@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import Form from 'react-bootstrap/Form'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import { Helmet } from 'react-helmet-async'
@@ -11,6 +12,7 @@ import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
 import { getError } from '../utils'
 import { Store } from '../Store'
+import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -25,8 +27,7 @@ const reducer = (state, action) => {
   }
 }
 
-const ProductScreen = () => {
-  const [selectedImage, setSelectedImage] = useState('')
+const ProductScreen = (props) => {
   const navigate = useNavigate()
   const params = useParams()
   const { slug } = params
@@ -50,16 +51,16 @@ const ProductScreen = () => {
     fetchData()
   }, [slug])
 
+  // form input qty (aantal porties toevoegen aan winkelwagen)
+  const [qty, setQty] = useState('')
+  const updateQty = (event) => {
+    setQty(event.target.value)
+  }
   const { state, dispatch: ctxDispatch } = useContext(Store)
   const { cart } = state
-  const addToCartHandler = async () => {
+  const addToCartHandler = () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id)
-    const quantity = existItem ? existItem.quantity + 1 : 1
-    const { data } = await axios.get(`/api/products/${product._id}`)
-    if (data.countInStock < quantity) {
-      window.alert('Sorry, u heeft het maximum aantal van dit gerecht bereikt.')
-      return
-    }
+    const quantity = existItem ? existItem.quantity + Number(qty) : Number(qty)
     ctxDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } })
     navigate('/cart')
   }
@@ -73,7 +74,7 @@ const ProductScreen = () => {
         <Col md={6}>
           <img
             className='img-large'
-            src={selectedImage || product.imageUrl}
+            src={product.imageUrl}
             alt={product.name}
           />
         </Col>
@@ -97,15 +98,34 @@ const ProductScreen = () => {
                     <Col>€{product.price} per portie</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
-                  <div className='d-grid'>
+                <ListGroupItem>
+                  {/* INPUT AANTAL */}
+
+                  <Form>
+                    <Form.Group
+                      className='mb-3'
+                      controlId='formInputQty'>
+                      <Form.Label>Aantal porties</Form.Label>
+                      <Form.Control
+                        type='number'
+                        placeholder='Aantal personen'
+                        value={qty}
+                        onChange={(event) => updateQty(event)}
+                        required
+                        min={10}
+                        max={400}
+                      />
+                    </Form.Group>
                     <Button
                       onClick={addToCartHandler}
-                      variant='primary'>
-                      Aan winkelwagen toevoegen
+                      variant='primary'
+                      type='submit'>
+                      Toevoegen aan winkelwagen
                     </Button>
-                  </div>
-                </ListGroup.Item>
+                  </Form>
+
+                  {/* END INPUT AANTAL */}
+                </ListGroupItem>
               </ListGroup>
             </Card.Body>
           </Card>

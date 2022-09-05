@@ -26,7 +26,6 @@ const data = {
       price: 0.98,
       category: 'desserts',
       slug: 'cupcakes',
-      countInStock: 300,
     },
     {
       //_id: '2',
@@ -38,7 +37,6 @@ const data = {
       price: 1.98,
       category: 'desserts',
       slug: 'cheesecake',
-      countInStock: 300,
     },
     {
       //_id: '3',
@@ -50,7 +48,6 @@ const data = {
       price: 1.48,
       category: 'desserts',
       slug: 'chocolate-brownies',
-      countInStock: 300,
     },
     {
       //_id: '4',
@@ -62,7 +59,6 @@ const data = {
       price: 1.48,
       category: 'desserts',
       slug: 'ice-cream',
-      countInStock: 300,
     },
     {
       //_id: '5',
@@ -73,7 +69,6 @@ const data = {
       price: 0.48,
       category: 'voorgerechten',
       slug: 'egg',
-      countInStock: 300,
     },
     {
       //_id: '5',
@@ -84,7 +79,6 @@ const data = {
       price: 0.48,
       category: 'voorgerechten',
       slug: 'yes',
-      countInStock: 300,
     },
   ],
 }

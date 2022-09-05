@@ -64,23 +64,7 @@ const CartScreen = () => {
                       <Link to={`/products/${item.slug}`}>{item.name}</Link>
                     </Col>
                     <Col md={4}>
-                      <Button
-                        variant='light'
-                        onClick={() =>
-                          updateCartHandler(item, item.quantity - 1)
-                        }
-                        disabled={item.quantity === 1}>
-                        <i className='fas fa-minus-circle'></i>
-                      </Button>{' '}
                       <span>{item.quantity}</span>{' '}
-                      <Button
-                        variant='light'
-                        onClick={() =>
-                          updateCartHandler(item, item.quantity + 1)
-                        }
-                        disabled={item.quantity === item.countInStock}>
-                        <i className='fas fa-plus-circle'></i>
-                      </Button>
                     </Col>
                     <Col md={2}>€{item.price}</Col>
                     <Col md={2}>
