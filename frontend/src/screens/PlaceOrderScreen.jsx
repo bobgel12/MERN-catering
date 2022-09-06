@@ -97,10 +97,11 @@ export default function PlaceOrderScreen() {
             <Card.Body>
               <Card.Title>Bezorging</Card.Title>
               <Card.Text>
-                <strong>Naam:</strong> {cart.shippingAddress.fullName} <br />
+                <strong>Naam: </strong> {cart.shippingAddress.fullName} <br />
                 <strong>Adres: </strong> {cart.shippingAddress.address},
                 {cart.shippingAddress.city}, {cart.shippingAddress.postalCode},
                 {cart.shippingAddress.country}
+                <strong>Datum: {cart.shippingAddress.date}</strong>
               </Card.Text>
               <Link to='/shipping'>Bewerken</Link>
             </Card.Body>

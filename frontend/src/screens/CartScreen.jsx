@@ -110,6 +110,16 @@ const CartScreen = () => {
                       disabled={cartItems.length === 0}>
                       Doorgaan naar bestellen
                     </Button>
+                    {/* 
+                    {' '}
+                      <Button
+                        variant='light'
+                        onClick={() =>
+                          updateCartHandler(item, item.quantity + 1)
+                        }>
+                        <i className='fas fa-plus-circle'></i>
+                      </Button> 
+                      */}
                   </div>
                 </ListGroup.Item>
               </ListGroup>

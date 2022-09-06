@@ -23,6 +23,7 @@ export default function ShippingAddressScreen() {
     }
   }, [userInfo, navigate])
   const [country, setCountry] = useState(shippingAddress.country || '')
+  const [date, setDate] = useState(shippingAddress.date || '')
   const submitHandler = (e) => {
     e.preventDefault()
     ctxDispatch({
@@ -33,6 +34,7 @@ export default function ShippingAddressScreen() {
         city,
         postalCode,
         country,
+        date,
       },
     })
     localStorage.setItem(
@@ -43,6 +45,7 @@ export default function ShippingAddressScreen() {
         city,
         postalCode,
         country,
+        date,
       })
     )
     navigate('/payment')
@@ -50,14 +53,14 @@ export default function ShippingAddressScreen() {
   return (
     <div>
       <Helmet>
-        <title>Bezorgingsadres</title>
+        <title>Bezorging</title>
       </Helmet>
 
       <CheckoutSteps
         step1
         step2></CheckoutSteps>
       <div className='container small-container'>
-        <h1 className='my-3'>Bezorgingsadres</h1>
+        <h1 className='my-3'>Bezorging</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group
             className='mb-3'
@@ -72,7 +75,7 @@ export default function ShippingAddressScreen() {
           <Form.Group
             className='mb-3'
             controlId='address'>
-            <Form.Label>Adres</Form.Label>
+            <Form.Label>Bezorgadres</Form.Label>
             <Form.Control
               value={address}
               onChange={(e) => setAddress(e.target.value)}
@@ -105,6 +108,16 @@ export default function ShippingAddressScreen() {
             <Form.Label>Land</Form.Label>
             <Form.Control
               value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group
+            className='mb-3'
+            controlId='date'>
+            <Form.Label>Datum en tijd</Form.Label>
+            <Form.Control
+              value={date}
               onChange={(e) => setCountry(e.target.value)}
               required
             />

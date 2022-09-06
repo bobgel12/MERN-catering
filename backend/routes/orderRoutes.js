@@ -4,6 +4,7 @@ import Order from '../models/orderModel.js'
 import User from '../models/userModel.js'
 import Product from '../models/productModel.js'
 import { isAuth, isAdmin } from '../utils.js'
+import nodemailer from 'nodemailer'
 
 const orderRouter = express.Router()
 
@@ -34,6 +35,61 @@ orderRouter.post(
 
     const order = await newOrder.save()
     res.status(201).send({ message: 'New Order Created', order })
+
+    const output = `
+    <p>U heeft een nieuwe bestelling!</p>
+    <h3>Overzicht bestelling</h3>
+    <ul>
+      <li>Bestelde gerechten: ${req.body.orderItems}</li>
+      <li>Bezorgadres: ${req.body.shippingAddress}</li>
+    </ul>
+    <h2>Betalingsoverzicht</h2>
+    <ul>
+      <li>Betaalwijze: ${req.body.paymentMethod}</li>
+      <li>Prijs gerechten: €${req.body.itemsPrice}</li>
+      <li>Prijs bezorging: €${req.body.shippingPrice}</li>
+      <li>Prijs BTW: €${req.body.taxPrice}</li>
+      <li><strong>Totaalprijs: €${req.body.totalPrice}</strong></li>
+    </ul>
+    <h2>Gebruikersoverzicht</h2>
+    <ul>
+      <li>Gebruiker id: ${req.user._id}</li>
+      <li>Gebruiker name: ${req.user._id}</li>
+      <li>Gebruiker email: ${req.user._id}</li>
+    </ul>
+    `
+    console.log(output)
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: process.env.NODEMAILER_EMAIL, // generated ethereal user
+        pass: process.env.NODEMAILER_EMAIL_PASS, // generated ethereal password
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    })
+
+    // send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: '"Kevins Catering Webshop" <admin@gmail.com>', // sender address
+      to: 'kevin@hotmail.com', // list of receivers
+      subject: 'Nieuwe bestelling!', // Subject line
+      html: output, // html body
+    })
+
+    console.log('Message sent: %s', info.messageId)
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+
+    main().catch(console.error)
   })
 )
 
