@@ -41,23 +41,25 @@ orderRouter.post(
         }
       }),
       null,
-      2
+      4
     )
 
     const output = `
     <h1>U heeft een nieuwe bestelling!</h1>
     <h3>Overzicht bestelling</h3>
-    <ul>
-      <li>Bestelde gerechten: ${orderItems})</li>
-      <li>Bezorgadres: 
-      <br /> ${req.body.shippingAddress.fullName}
-      <br /> ${req.body.shippingAddress.address}
-      <br /> ${req.body.shippingAddress.postalCode} ${req.body.shippingAddress.city}
-      <br /> ${req.body.shippingAddress.country}
-      </li>
-      <li>Bezorgddatum: ${req.body.shippingAddress.date}
+    <p>
+    Bestelde gerechten: <br />
+    ${orderItems})
+    
+    Bezorgadres: <br /> 
+    ${req.body.shippingAddress.fullName}<br /> 
+    ${req.body.shippingAddress.address}<br /> 
+    ${req.body.shippingAddress.postalCode} ${req.body.shippingAddress.city} <br /> 
+    ${req.body.shippingAddress.country}<br />
+    <br /> 
+    Bezorgdatum: ${req.body.shippingAddress.date}
+    </p>
 
-    </ul>
     <h4>Betalingsoverzicht</h4>
     <ul>
       <li>Betaalwijze: ${req.body.paymentMethod}</li>
@@ -66,7 +68,7 @@ orderRouter.post(
       <li>Prijs BTW: €${req.body.taxPrice}</li>
       <li><strong>Totaalprijs: €${req.body.totalPrice}</strong></li>
     </ul>
-    <h4>Gebruikersoverzicht</h4>
+    <h4>Gebruiker</h4>
     <ul>
       <li>Gebruiker id: ${req.user._id}</li>
       <li>Gebruikersnaam: ${req.user.name}</li>
