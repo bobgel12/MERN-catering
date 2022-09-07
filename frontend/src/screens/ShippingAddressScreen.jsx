@@ -118,7 +118,7 @@ export default function ShippingAddressScreen() {
             <Form.Label>Datum en tijd</Form.Label>
             <Form.Control
               value={date}
-              onChange={(e) => setCountry(e.target.value)}
+              onChange={(e) => setDate(e.target.value)}
               required
             />
           </Form.Group>
