@@ -50,7 +50,8 @@ orderRouter.post(
     <p>
     Bestelde gerechten: <br />
     ${orderItems})
-    
+    <br />
+    <br />
     Bezorgadres: <br /> 
     ${req.body.shippingAddress.fullName}<br /> 
     ${req.body.shippingAddress.address}<br /> 
