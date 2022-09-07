@@ -33,17 +33,32 @@ orderRouter.post(
       user: req.user._id,
     })
 
-    const order = await newOrder.save()
-    res.status(201).send({ message: 'New Order Created', order })
+    const orderItems = JSON.stringify(
+      req.body.orderItems.map((orderItem) => {
+        return {
+          name: orderItem.name,
+          quantity: orderItem.quantity,
+        }
+      }),
+      null,
+      2
+    )
 
     const output = `
-    <p>U heeft een nieuwe bestelling!</p>
+    <h1>U heeft een nieuwe bestelling!</h1>
     <h3>Overzicht bestelling</h3>
     <ul>
-      <li>Bestelde gerechten: ${req.body.orderItems}</li>
-      <li>Bezorgadres: ${req.body.shippingAddress}</li>
+      <li>Bestelde gerechten: ${orderItems})</li>
+      <li>Bezorgadres: 
+      <br /> ${req.body.shippingAddress.fullName}
+      <br /> ${req.body.shippingAddress.address}
+      <br /> ${req.body.shippingAddress.postalCode} ${req.body.shippingAddress.city}
+      <br /> ${req.body.shippingAddress.country}
+      </li>
+      <li>Bezorgddatum: ${req.body.shippingAddress.date}
+
     </ul>
-    <h2>Betalingsoverzicht</h2>
+    <h4>Betalingsoverzicht</h4>
     <ul>
       <li>Betaalwijze: ${req.body.paymentMethod}</li>
       <li>Prijs gerechten: €${req.body.itemsPrice}</li>
@@ -51,16 +66,16 @@ orderRouter.post(
       <li>Prijs BTW: €${req.body.taxPrice}</li>
       <li><strong>Totaalprijs: €${req.body.totalPrice}</strong></li>
     </ul>
-    <h2>Gebruikersoverzicht</h2>
+    <h4>Gebruikersoverzicht</h4>
     <ul>
       <li>Gebruiker id: ${req.user._id}</li>
-      <li>Gebruiker name: ${req.user._id}</li>
-      <li>Gebruiker email: ${req.user._id}</li>
+      <li>Gebruikersnaam: ${req.user.name}</li>
+      <li>Gebruiker email: ${req.user.email}</li>
     </ul>
     `
     console.log(output)
 
-    // create reusable transporter object using the default SMTP transport
+    // create reusable transporter object
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       port: 587,
@@ -83,7 +98,9 @@ orderRouter.post(
     })
 
     console.log('Message sent: %s', info.messageId)
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+
+    const order = await newOrder.save()
+    res.status(201).send({ message: 'New Order Created', order })
 
     main().catch(console.error)
   })

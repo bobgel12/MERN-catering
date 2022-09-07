@@ -120,6 +120,7 @@ export default function ShippingAddressScreen() {
               value={date}
               onChange={(e) => setDate(e.target.value)}
               required
+              placeholder='19 september 2022 om 19h'
             />
           </Form.Group>
           <div className='mb-3'>

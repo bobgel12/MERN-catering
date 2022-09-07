@@ -99,11 +99,14 @@ export default function PlaceOrderScreen() {
               <Card.Text>
                 <strong>Naam: </strong> {cart.shippingAddress.fullName} <br />
                 <br />
-                <strong>Adres: </strong> {cart.shippingAddress.address}
+                <strong>Adres: </strong>
+                <br />
+                {cart.shippingAddress.address}
                 <br />
                 {cart.shippingAddress.postalCode} {cart.shippingAddress.city}
                 <br />
                 {cart.shippingAddress.country}
+                <br />
                 <br />
                 <strong>Datum: </strong> {cart.shippingAddress.date}
               </Card.Text>
@@ -186,7 +189,7 @@ export default function PlaceOrderScreen() {
                       type='button'
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}>
-                      Bestlling plaatsen
+                      Bestelling plaatsen
                     </Button>
                   </div>
                   {loading && <LoadingBox></LoadingBox>}
