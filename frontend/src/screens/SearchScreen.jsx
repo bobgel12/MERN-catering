@@ -90,7 +90,7 @@ export default function SearchScreen() {
       <Helmet>
         <title>Catalogus</title>
       </Helmet>
-      <Row>
+      <Row className='search-container'>
         <Col md={3}>
           <h3 className='left'>Categoriën</h3>
           <br />

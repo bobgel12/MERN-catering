@@ -1,0 +1,25 @@
+.contact {
+    height: 100vh;
+    padding-top: 40vh;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: 
+        linear-gradient(
+            to right,
+            rgba($primary-color, 0.9),
+            rgba($primary-color, 0.6)
+        ), url("https://www.gordonramsayrestaurants.com/assets/Uploads/_resampled/CroppedFocusedImage102457650-50-BSK-roasts-.jpg")
+        center top;
+    background-size: cover;
+
+    h4 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &__email, &__phone, &__address {
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+}

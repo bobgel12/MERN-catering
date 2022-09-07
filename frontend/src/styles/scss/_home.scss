@@ -1,0 +1,38 @@
+
+
+.home {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 30vh;
+    align-items: center;
+    text-align: center;
+    background: 
+        linear-gradient(
+            to right,
+            rgba($primary-color, 0.8),
+            rgba($primary-color, 0.6)
+        ), url("https://www.gordonramsayrestaurants.com/assets/Uploads/_resampled/CroppedFocusedImage102457650-50-BSK-roasts-.jpg")
+        center top;
+    background-size: cover;
+
+    &__text {
+        padding: 20px;
+        font-size: 2rem;
+    }
+
+    &__button {
+        padding: 10px 20px;
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+        border-radius: 25px;
+
+        &:hover {
+            color: set-text-color(set-text-color($secondary-color));
+            background: $primary-color
+        }
+    }
+}
+

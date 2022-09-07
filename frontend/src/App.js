@@ -68,7 +68,7 @@ function App() {
                   <Link
                     to='/cart'
                     className='nav-link'>
-                    Winkelwagen
+                    WINKELWAGEN
                     {cart.cartItems.length > 0 && (
                       <Badge
                         pill
@@ -76,6 +76,16 @@ function App() {
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                       </Badge>
                     )}
+                  </Link>
+                  <Link
+                    to='/about'
+                    className='nav-link'>
+                    OVER
+                  </Link>
+                  <Link
+                    to='/contact'
+                    className='nav-link'>
+                    CONTACT
                   </Link>
                   {userInfo ? (
                     <NavDropdown

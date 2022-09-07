@@ -1,0 +1,277 @@
+@import 'config', 'home', 'responsive';
+// , 'about', 'contact', 'bestel';
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+/* 
+-------------------------------------------------
+*/
+
+
+
+
+
+  .site-container {
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
+  }
+  .btn-primary,
+  .btn-outline-primary {
+    background-color: $tertiary-color;
+    color: set-text-color($tertiary-color);
+    border: none;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product {
+    border: 3px $primary-color solid;
+    margin: 1rem;
+  }
+  .product img {
+    width: 100%;
+    max-width: 400px;
+  }
+  .product-info {
+    padding: 1rem;
+  }
+  .img-large {
+    max-width: 100%;
+  }
+  .img-thumbnail {
+    height: 80px;
+  }
+  .small-container {
+    max-width: 600px;
+  }
+  
+  .checkout-steps > div {
+    border-bottom: 0.2rem solid set-text-color($primary-color);
+    color: set-text-color($primary-color);
+  }
+  .checkout-steps > div.active {
+    border-bottom: 0.2rem solid $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+  
+
+  
+  /* Map */
+  
+  .full-box {
+    height: 100vh;
+    max-width: initial;
+  }
+  .full-box header,
+  .full-box footer {
+    display: none;
+  }
+  .full-box .container {
+    height: 100vh;
+    max-width: initial;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .full-box .mt-3 {
+    margin-top: 0;
+  }
+
+
+  
+  .map-input-box {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0.5rem auto;
+    width: 25rem;
+    height: 3rem;
+    display: flex;
+  }
+  .map-input-box input {
+    border-radius: 1rem 0 0 1rem;
+    border-right: 0;
+  }
+  .map-input-box button {
+    border-radius: 0 1rem 1rem 0;
+    border-left: 0;
+  }
+  button.thumbnail {
+    padding: 0;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    line-height: 1;
+  }
+  
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 700;
+    color: set-text-color($primary-color);
+  }
+  
+  .row {
+    text-align: center;
+  }
+  
+  
+  
+  
+  
+  /* MY OWN CSS */
+  
+  .card-img-top {
+    height: 300px;
+  }
+  
+  ul {
+  list-style: none;
+  text-align: left;
+  }
+  
+  
+  ul > li > a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: set-text-color($primary-color);
+    background-color: $secondary-color;
+    line-height: 3rem;
+  }
+  
+  .left {
+    text-align: left;
+  }
+  
+  .card, .list-group-item, .img-fluid {
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+
+
+  
+  .img-fluid {
+    border: none;
+  }
+  
+  a {
+    color: set-text-color($primary-color);
+    text-decoration: none;
+  }
+  a:hover {
+    color: set-text-color($primary-color);
+    text-decoration: none;
+  }
+  
+  .table {
+    color: set-text-color($primary-color);
+  }
+  
+  .alert > a {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .alert {
+    background-color: lighten($color: $primary-color, $amount: 20);
+    color: set-text-color($primary-color);
+  }
+
+
+  .mt-3 {
+    margin: 50px auto !important;
+  }
+
+.bg-dark {
+    background-color: $primary-color !important;
+}
+
+
+
+/* 
+-------------------------------------------------
+*/
+
+
+body {
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100vh;
+    line-height: 1; 
+}  
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 0 0 50px 0;
+}
+
+
+a {
+    color: set-text-color($primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+
+
+
+footer {
+    font-size: 0.6rem;
+    position: fixed;
+    bottom: 0.4rem;
+    right: 1rem;
+    text-align: right;
+    padding: 1rem;
+    color: set-text-color($primary-color);
+}
+
+p > a {
+    margin: 10px;
+}
