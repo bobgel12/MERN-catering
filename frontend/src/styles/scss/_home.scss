@@ -3,7 +3,6 @@
 .home {
     position: fixed;
     top: 0; left: 0;
-    z-index: -1;
     height: 100vh;
     width: 100vw;
     padding-top: 30vh;
@@ -30,8 +29,8 @@
         border-radius: 25px;
 
         &:hover {
-            color: set-text-color(set-text-color($secondary-color));
-            background: $primary-color
+            color: set-text-color($secondary-color);
+            background: $secondary-color
         }
     }
 }
