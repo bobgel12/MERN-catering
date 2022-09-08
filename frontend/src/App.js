@@ -66,6 +66,11 @@ function App() {
 
                 <Nav className='me-auto  w-100  justify-content-end'>
                   <Link
+                    to='/search'
+                    className='nav-link'>
+                    CATALOGUS
+                  </Link>
+                  <Link
                     to='/cart'
                     className='nav-link'>
                     WINKELWAGEN
