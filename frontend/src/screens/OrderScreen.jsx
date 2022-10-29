@@ -265,18 +265,7 @@ export default function OrderScreen() {
             <Card.Body>
               <Card.Title>Overzicht bestelling</Card.Title>
               <ListGroup variant='flush'>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Gerechten</Col>
-                    <Col>€{order.itemsPrice.toFixed(2)}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>BTW</Col>
-                    <Col>€{order.taxPrice.toFixed(2)}</Col>
-                  </Row>
-                </ListGroup.Item>
+
                 <ListGroup.Item>
                   <Row>
                     <Col>
