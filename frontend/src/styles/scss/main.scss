@@ -164,6 +164,18 @@ a {
   color: $tertiary-color;
   font-weight: bold;
 }
+.navbar-brand:hover,
+.nav-link:hover {
+  color: $primary-color;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus,
+.navbar-toggler {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
 
 .card-img-top {
   height: 300px;

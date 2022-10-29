@@ -9,12 +9,17 @@
   text-align: center;
   background: linear-gradient(
       to right,
-      rgba($primary-color, 0.6),
-      rgba($primary-color, 0.7)
+      rgba($primary-color, 0.5),
+      rgba($primary-color, 0.5)
     ),
     url('https://images.unsplash.com/photo-1635341109197-92a35fd98a77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')
       center top;
   background-size: cover;
+
+  & h1 {
+    text-shadow: 2px 2px $secondary-color;
+    font-size: 4rem;
+  }
 
   &__text {
     padding: 20px;
