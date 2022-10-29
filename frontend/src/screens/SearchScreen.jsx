@@ -100,7 +100,7 @@ export default function SearchScreen() {
                 <Link
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}>
-                  Alle gerechten
+                  alle gerechten
                 </Link>
               </li>
               {categories.map((c) => (

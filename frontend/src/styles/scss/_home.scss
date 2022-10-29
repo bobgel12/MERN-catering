@@ -1,37 +1,35 @@
-
-
 .home {
-    position: fixed;
-    top: 0; left: 0;
-    height: 100vh;
-    width: 100vw;
-    padding-top: 30vh;
-    align-items: center;
-    text-align: center;
-    background: 
-        linear-gradient(
-            to right,
-            rgba($primary-color, 0.8),
-            rgba($primary-color, 0.6)
-        ), url("https://www.gordonramsayrestaurants.com/assets/Uploads/_resampled/CroppedFocusedImage102457650-50-BSK-roasts-.jpg")
-        center top;
-    background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 30vh;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+      to right,
+      rgba($primary-color, 0.6),
+      rgba($primary-color, 0.7)
+    ),
+    url('https://images.unsplash.com/photo-1635341109197-92a35fd98a77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')
+      center top;
+  background-size: cover;
 
-    &__text {
-        padding: 20px;
-        font-size: 2rem;
+  &__text {
+    padding: 20px;
+    font-size: 2rem;
+  }
+
+  &__button {
+    padding: 10px 20px;
+    background: $tertiary-color;
+    color: set-text-color($tertiary-color);
+    border-radius: 25px;
+
+    &:hover {
+      color: set-text-color($secondary-color);
+      background: $secondary-color;
     }
-
-    &__button {
-        padding: 10px 20px;
-        background: $tertiary-color;
-        color: set-text-color($tertiary-color);
-        border-radius: 25px;
-
-        &:hover {
-            color: set-text-color($secondary-color);
-            background: $secondary-color
-        }
-    }
+  }
 }
-

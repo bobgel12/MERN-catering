@@ -27,7 +27,6 @@ orderRouter.post(
       shippingAddress: req.body.shippingAddress,
       paymentMethod: req.body.paymentMethod,
       itemsPrice: req.body.itemsPrice,
-      shippingPrice: req.body.shippingPrice,
       taxPrice: req.body.taxPrice,
       totalPrice: req.body.totalPrice,
       user: req.user._id,
@@ -65,7 +64,6 @@ orderRouter.post(
     <ul>
       <li>Betaalwijze: ${req.body.paymentMethod}</li>
       <li>Prijs gerechten: €${req.body.itemsPrice}</li>
-      <li>Prijs bezorging: €${req.body.shippingPrice}</li>
       <li>Prijs BTW: €${req.body.taxPrice}</li>
       <li><strong>Totaalprijs: €${req.body.totalPrice}</strong></li>
     </ul>

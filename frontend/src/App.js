@@ -13,6 +13,8 @@ import { useContext } from 'react'
 import { Store } from './Store'
 import { Link } from 'react-router-dom'
 import CartScreen from './screens/CartScreen'
+import AboutScreen from './screens/AboutScreen'
+import ContactScreen from './screens/ContactScreen'
 import SigninScreen from './screens/SigninScreen'
 import ShippingAddressScreen from './screens/ShippingAddressScreen'
 import SignupScreen from './screens/SignupScreen'
@@ -53,8 +55,8 @@ function App() {
         />
         <header>
           <Navbar
-            bg='dark'
-            variant='dark'
+            bg='light'
+            variant='light'
             expand='lg'>
             <Container>
               <LinkContainer to='/'>
@@ -73,7 +75,7 @@ function App() {
                   <Link
                     to='/cart'
                     className='nav-link'>
-                    WINKELWAGEN
+                    WINKELWAGEN <i class='fa-solid fa-cart-shopping fa-xl'></i>
                     {cart.cartItems.length > 0 && (
                       <Badge
                         pill
@@ -158,6 +160,14 @@ function App() {
               <Route
                 path='/search'
                 element={<SearchScreen />}
+              />
+              <Route
+                path='/about'
+                element={<AboutScreen />}
+              />
+              <Route
+                path='/contact'
+                element={<ContactScreen />}
               />
 
               <Route

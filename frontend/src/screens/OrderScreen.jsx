@@ -273,12 +273,6 @@ export default function OrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Bezorging</Col>
-                    <Col>€{order.shippingPrice.toFixed(2)}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
                     <Col>BTW</Col>
                     <Col>€{order.taxPrice.toFixed(2)}</Col>
                   </Row>
