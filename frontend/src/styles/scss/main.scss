@@ -176,9 +176,16 @@ a {
   box-shadow: none;
   border: none;
 }
+.form-control:active,
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 .card-img-top {
-  height: 300px;
+  width: 100%;
+  height: 200px;
+  object-fit: scale-down;
 }
 
 ul {
