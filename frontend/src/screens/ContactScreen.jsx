@@ -8,20 +8,22 @@ export default function SearchScreen() {
       <Helmet>
         <title>Over</title>
       </Helmet>
-      <section class='contact'>
+      <section className='contact'>
         <h4>CONTACT</h4>
-        <div class='contact__list'>
-          <div class='contact__email'>
-            <i class='fas fa-envelope'></i> Email
-            <div class='text-secondary'>luna.dl@hotmail.com</div>
+        <div className='contact__list'>
+          <div className='contact__email'>
+            <i className='fas fa-envelope'></i> Email
+            <div className='text-secondary'>luna.dl@hotmail.com</div>
           </div>
-          <div class='contact__phone'>
-            <i class='fas fa-mobile-alt'></i> Tel.
-            <div class='text-secondary'>+324 67 03 97 74</div>
+          <div className='contact__phone'>
+            <i className='fas fa-mobile-alt'></i> Tel.
+            <div className='text-secondary'>+324 67 03 97 74</div>
           </div>
-          <div class='contact__address'>
-            <i class='fas fa-marker-alt'></i> Adres
-            <div class='text-secondary'>Straat 123, 2570 Duffel, Belgium</div>
+          <div className='contact__address'>
+            <i className='fas fa-marker-alt'></i> Adres
+            <div className='text-secondary'>
+              Straat 123, 2570 Duffel, Belgium
+            </div>
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ export default function PaymentMethodScreen() {
   const navigate = useNavigate()
   const { state, dispatch: ctxDispatch } = useContext(Store)
   const {
-    cart: { shippingAddress, paymentMethod },
+    cart: { reservation, paymentMethod },
   } = state
 
   const [paymentMethodName, setPaymentMethod] = useState(
@@ -18,10 +18,10 @@ export default function PaymentMethodScreen() {
   )
 
   useEffect(() => {
-    if (!shippingAddress.address) {
-      navigate('/shipping')
+    if (!reservation) {
+      navigate('/reservation')
     }
-  }, [shippingAddress, navigate])
+  }, [reservation, navigate])
   const submitHandler = (e) => {
     e.preventDefault()
     ctxDispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethodName })
@@ -33,7 +33,8 @@ export default function PaymentMethodScreen() {
       <CheckoutSteps
         step1
         step2
-        step3></CheckoutSteps>
+        step3
+        step4></CheckoutSteps>
       <div className='container small-container'>
         <Helmet>
           <title>Betaalwijze</title>

@@ -6,7 +6,7 @@ const reservationSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  time: {
+  fullName: {
     type: String,
     required: true,
   },
@@ -18,7 +18,7 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  zip: {
+  postalCode: {
     type: Number,
     required: true,
   },

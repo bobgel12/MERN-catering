@@ -12,10 +12,10 @@ reservationRouter.post(
   expressAsyncHandler(async (req, res) => {
     const newReservation = new Reservation({
       date: req.body.date,
-      time: req.body.time,
+      fullName: req.body.fullName,
       company: req.body.company,
       address: req.body.address,
-      zip: req.body.zip,
+      postalCode: req.body.postalCode,
       city: req.body.city,
       comments: req.body.comments,
     })

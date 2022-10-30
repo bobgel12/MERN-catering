@@ -33,6 +33,7 @@ import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
 import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
+import ReservationScreen from './screens/ReservationScreen'
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store)
@@ -42,6 +43,7 @@ function App() {
     ctxDispatch({ type: 'USER_SIGNOUT' })
     localStorage.removeItem('userInfo')
     localStorage.removeItem('shippingAddress')
+    localStorage.removeItem('reservation')
     localStorage.removeItem('paymentMethod')
     window.location.href = '/signin'
   }
@@ -75,7 +77,8 @@ function App() {
                   <Link
                     to='/cart'
                     className='nav-link'>
-                    WINKELWAGEN <i class='fa-solid fa-cart-shopping fa-xl'></i>
+                    WINKELWAGEN{' '}
+                    <i className='fa-solid fa-cart-shopping fa-xl'></i>
                     {cart.cartItems.length > 0 && (
                       <Badge
                         pill
@@ -190,6 +193,9 @@ function App() {
               <Route
                 path='/shipping'
                 element={<ShippingAddressScreen />}></Route>
+              <Route
+                path='/reservation'
+                element={<ReservationScreen />}></Route>
               <Route
                 path='/payment'
                 element={<PaymentMethodScreen />}></Route>

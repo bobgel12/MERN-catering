@@ -6,59 +6,78 @@ import { useNavigate } from 'react-router-dom'
 import { Store } from '../Store'
 import CheckoutSteps from '../components/CheckoutSteps'
 
-export default function ShippingAddressScreen() {
+export default function ReservationScreen() {
   const navigate = useNavigate()
   const { state, dispatch: ctxDispatch } = useContext(Store)
   const {
     userInfo,
-    cart: { shippingAddress },
+    cart: { reservation },
   } = state
-  const [fullName, setFullName] = useState(shippingAddress.fullName || '')
-  const [address, setAddress] = useState(shippingAddress.address || '')
-  const [city, setCity] = useState(shippingAddress.city || '')
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode || '')
+  const [date, setDate] = useState(reservation.date || '')
+  const [fullName, setFullName] = useState(reservation.fullName || '')
+  const [company, setCompany] = useState(reservation.company || '')
+  const [address, setAddress] = useState(reservation.address || '')
+  const [city, setCity] = useState(reservation.city || '')
+  const [postalCode, setPostalCode] = useState(reservation.postalCode || '')
+  const [comments, setComments] = useState(reservation.comments || '')
   useEffect(() => {
     if (!userInfo) {
-      navigate('/signin?redirect=/shipping')
+      navigate('/signin?redirect=/reservation')
     }
   }, [userInfo, navigate])
-  const [country, setCountry] = useState(shippingAddress.country || '')
   const submitHandler = (e) => {
     e.preventDefault()
     ctxDispatch({
-      type: 'SAVE_SHIPPING_ADDRESS',
+      type: 'SAVE_RESERVATION',
       payload: {
+        date,
         fullName,
+        company,
         address,
         city,
         postalCode,
-        country,
+        comments,
       },
     })
     localStorage.setItem(
-      'shippingAddress',
+      'reservation',
       JSON.stringify({
+        date,
         fullName,
+        company,
         address,
         city,
         postalCode,
-        country,
+        comments,
       })
     )
-    navigate('/reservation')
+    navigate('/payment')
   }
   return (
     <div>
       <Helmet>
-        <title>Factuuradres</title>
+        <title>Reservatie</title>
       </Helmet>
 
       <CheckoutSteps
         step1
-        step2></CheckoutSteps>
+        step2
+        step3></CheckoutSteps>
       <div className='container small-container'>
-        <h1 className='my-3'>Factuuradres</h1>
+        <h1 className='my-3'>Reservatie</h1>
         <Form onSubmit={submitHandler}>
+          <Form.Group
+            className='mb-3'
+            controlId='date'>
+            <Form.Label>Datum en tijd</Form.Label>
+            <Form.Control
+              type='datetime-local'
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+            />
+          </Form.Group>
+
           <Form.Group
             className='mb-3'
             controlId='fullName'>
@@ -71,8 +90,17 @@ export default function ShippingAddressScreen() {
           </Form.Group>
           <Form.Group
             className='mb-3'
+            controlId='company'>
+            <Form.Label>Bedrijf</Form.Label>
+            <Form.Control
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group
+            className='mb-3'
             controlId='address'>
-            <Form.Label>Straat + straatnummer</Form.Label>
+            <Form.Label>Adres</Form.Label>
             <Form.Control
               value={address}
               onChange={(e) => setAddress(e.target.value)}
@@ -102,11 +130,10 @@ export default function ShippingAddressScreen() {
           <Form.Group
             className='mb-3'
             controlId='country'>
-            <Form.Label>Land</Form.Label>
+            <Form.Label>Bijkomende opmerkingen</Form.Label>
             <Form.Control
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-              required
+              value={comments}
+              onChange={(e) => setComments(e.target.value)}
             />
           </Form.Group>
 

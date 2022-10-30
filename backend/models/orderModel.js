@@ -25,6 +25,36 @@ const orderSchema = new mongoose.Schema(
       country: { type: String, required: true },
       date: { type: String, required: true },
     },
+    reservation: {
+      date: {
+        type: Date,
+        required: true,
+      },
+      fullName: {
+        type: String,
+        required: true,
+      },
+      address: {
+        type: String,
+        required: true,
+      },
+      company: {
+        type: String,
+        required: false,
+      },
+      postalCode: {
+        type: Number,
+        required: true,
+      },
+      city: {
+        type: String,
+        required: true,
+      },
+      comments: {
+        type: String,
+        required: false,
+      },
+    },
     paymentMethod: { type: String, required: true },
     paymentResult: {
       id: String,

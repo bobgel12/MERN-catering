@@ -51,6 +51,7 @@ export default function PlaceOrderScreen() {
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
+          reservation: cart.reservation,
           paymentMethod: cart.paymentMethod,
           itemsPrice: cart.itemsPrice,
           totalPrice: cart.totalPrice,
@@ -82,7 +83,8 @@ export default function PlaceOrderScreen() {
         step1
         step2
         step3
-        step4></CheckoutSteps>
+        step4
+        step5></CheckoutSteps>
       <Helmet>
         <title>Overzicht bestelling</title>
       </Helmet>
@@ -91,7 +93,7 @@ export default function PlaceOrderScreen() {
         <Col md={8}>
           <Card className='mb-3'>
             <Card.Body>
-              <Card.Title>Bezorging</Card.Title>
+              <Card.Title>Factuuradres</Card.Title>
               <Card.Text>
                 <strong>Naam: </strong> {cart.shippingAddress.fullName} <br />
                 <br />
@@ -103,10 +105,39 @@ export default function PlaceOrderScreen() {
                 <br />
                 {cart.shippingAddress.country}
                 <br />
-                <br />
-                <strong>Datum: </strong> {cart.shippingAddress.date}
               </Card.Text>
-              <Link to='/shipping'>Bewerken</Link>
+              <Link
+                to='/shipping'
+                className='btn'>
+                Bewerken
+              </Link>
+            </Card.Body>
+          </Card>
+          <Card className='mb-3'>
+            <Card.Body>
+              <Card.Title>Reservatie</Card.Title>
+              <Card.Text>
+                <strong>Date: </strong> {cart.reservation.date} <br />
+                <br />
+                <strong>Naam: </strong> {cart.reservation.fullName} <br />
+                <br />
+                <strong>Bedrijf: </strong> {cart.reservation.company} <br />
+                <br />
+                <strong>Adres: </strong>
+                <br />
+                {cart.reservation.address}
+                <br />
+                {cart.reservation.postalCode} {cart.reservation.city}
+                <br />
+                <br />
+                <strong>Opmerkingen:</strong> {cart.reservation.comments}
+                <br />
+              </Card.Text>
+              <Link
+                to='/reservation'
+                className='btn'>
+                Bewerken
+              </Link>
             </Card.Body>
           </Card>
 
@@ -116,7 +147,11 @@ export default function PlaceOrderScreen() {
               <Card.Text>
                 <strong>Betaalwijze:</strong> {cart.paymentMethod}
               </Card.Text>
-              <Link to='/payment'>Bewerken</Link>
+              <Link
+                to='/payment'
+                className='btn'>
+                Bewerken
+              </Link>
             </Card.Body>
           </Card>
 
@@ -142,7 +177,11 @@ export default function PlaceOrderScreen() {
                   </ListGroup.Item>
                 ))}
               </ListGroup>
-              <Link to='/cart'>Bewerken</Link>
+              <Link
+                to='/cart'
+                className='btn'>
+                Bewerken
+              </Link>
             </Card.Body>
           </Card>
         </Col>

@@ -8,10 +8,10 @@ export default function SearchScreen() {
       <Helmet>
         <title>Over</title>
       </Helmet>
-      <section class='about'>
-        <div class='about__bio-image'>
-          <div class='about__bio'>
-            <h2 class='text-secondary'>BIO</h2>
+      <section className='about'>
+        <div className='about__bio-image'>
+          <div className='about__bio'>
+            <h2 className='text-secondary'>BIO</h2>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Dignissimos facere possimus asperiores incidunt ipsa earum
@@ -21,9 +21,9 @@ export default function SearchScreen() {
           </div>
         </div>
 
-        <div class='jobs'>
-          <div class='jobs__job'>
-            <h2 class='text-secondary'>2022 - current</h2>
+        <div className='jobs'>
+          <div className='jobs__job'>
+            <h2 className='text-secondary'>2022 - current</h2>
             <h3>Your Company</h3>
             <h6>Kok</h6>
             <p>
@@ -33,8 +33,8 @@ export default function SearchScreen() {
               debitis.
             </p>
           </div>
-          <div class='jobs__job'>
-            <h2 class='text-secondary'>2012 - 2022</h2>
+          <div className='jobs__job'>
+            <h2 className='text-secondary'>2012 - 2022</h2>
             <h3>Your Company</h3>
             <h6>Kok</h6>
             <p>
@@ -44,8 +44,8 @@ export default function SearchScreen() {
               debitis.
             </p>
           </div>
-          <div class='jobs__job'>
-            <h2 class='text-secondary'>2002 - 2012</h2>
+          <div className='jobs__job'>
+            <h2 className='text-secondary'>2002 - 2012</h2>
             <h3>Your Company</h3>
             <h6>Kok</h6>
             <p>
