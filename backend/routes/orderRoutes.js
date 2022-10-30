@@ -59,7 +59,6 @@ orderRouter.post(
     ${req.body.shippingAddress.postalCode} ${req.body.shippingAddress.city} <br /> 
     ${req.body.shippingAddress.country}<br />
     <br /> 
-    Bezorgdatum: ${req.body.shippingAddress.date}
     Reservatie:
     <br />
     <strong>Date: </strong> ${req.body.reservation.date} <br />

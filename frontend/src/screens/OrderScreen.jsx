@@ -209,13 +209,9 @@ export default function OrderScreen() {
                 ,{order.shippingAddress.country}
               </Card.Text>
               {order.isDelivered ? (
-                <MessageBox variant='success'>
-                  Bezorgd op {order.deliveredAt}
-                </MessageBox>
+                <MessageBox variant='success'>Voltooid</MessageBox>
               ) : (
-                <MessageBox variant='danger'>
-                  Bezorging gepland op {order.shippingAddress.date}
-                </MessageBox>
+                <></>
               )}
             </Card.Body>
           </Card>
@@ -265,7 +261,6 @@ export default function OrderScreen() {
             <Card.Body>
               <Card.Title>Overzicht bestelling</Card.Title>
               <ListGroup variant='flush'>
-
                 <ListGroup.Item>
                   <Row>
                     <Col>
