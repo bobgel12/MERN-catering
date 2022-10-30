@@ -8,6 +8,7 @@ import nodemailer from 'nodemailer'
 
 const orderRouter = express.Router()
 
+// GET
 orderRouter.get(
   '/',
   isAuth,
@@ -18,6 +19,7 @@ orderRouter.get(
   })
 )
 
+// CREATE
 orderRouter.post(
   '/',
   isAuth,
@@ -62,7 +64,6 @@ orderRouter.post(
     <h4>Betalingsoverzicht</h4>
     <ul>
       <li>Betaalwijze: ${req.body.paymentMethod}</li>
-      <li>Prijs gerechten: €${req.body.itemsPrice}</li>
       <li><strong>Totaalprijs: €${req.body.totalPrice}</strong></li>
     </ul>
     <h4>Gebruiker</h4>
@@ -72,8 +73,6 @@ orderRouter.post(
       <li>Gebruiker email: ${req.user.email}</li>
     </ul>
     `
-    console.log(output)
-
     // create reusable transporter object
     let transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -96,7 +95,7 @@ orderRouter.post(
       html: output, // html body
     })
 
-    console.log('Message sent: %s', info.messageId)
+    console.log('Message sent: ', info.messageId)
 
     const order = await newOrder.save()
     res.status(201).send({ message: 'New Order Created', order })

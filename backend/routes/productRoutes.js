@@ -5,11 +5,13 @@ import { isAuth, isAdmin } from '../utils.js'
 
 const productRouter = express.Router()
 
+// GET ALL
 productRouter.get('/', async (req, res) => {
   const products = await Product.find()
   res.send(products)
 })
 
+// CREATE
 productRouter.post(
   '/',
   isAuth,
@@ -18,7 +20,7 @@ productRouter.post(
     const newProduct = new Product({
       name: 'sample name ' + Date.now(),
       slug: 'sample-name-' + Date.now(),
-      imageUrl: '/images/p1.jpg',
+      imageUrl: 'vul hier een url in of upload een image hieronder',
       price: 0,
       category: 'sample category',
       countInStock: 0,
@@ -29,6 +31,7 @@ productRouter.post(
   })
 )
 
+// UPDATE
 productRouter.put(
   '/:id',
   isAuth,
@@ -53,6 +56,7 @@ productRouter.put(
   })
 )
 
+// DELETE
 productRouter.delete(
   '/:id',
   isAuth,
@@ -68,8 +72,10 @@ productRouter.delete(
   })
 )
 
+// PAGE SIZE
 const PAGE_SIZE = 20
 
+// GET ADMIN PRODUCTS
 productRouter.get(
   '/admin',
   isAuth,
@@ -91,6 +97,8 @@ productRouter.get(
     })
   })
 )
+
+// GET SEARCH PAGE
 
 productRouter.get(
   '/search',
@@ -156,6 +164,7 @@ productRouter.get(
   })
 )
 
+// GET CATEGORIES
 productRouter.get(
   '/categories',
   expressAsyncHandler(async (req, res) => {
@@ -164,6 +173,7 @@ productRouter.get(
   })
 )
 
+// GET PRODUCT 
 productRouter.get('/slug/:slug', async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug })
   if (product) {

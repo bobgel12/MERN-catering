@@ -16,6 +16,7 @@ const orderSchema = new mongoose.Schema(
         },
       },
     ],
+    // todo: turn into billing address
     shippingAddress: {
       fullName: { type: String, required: true },
       address: { type: String, required: true },

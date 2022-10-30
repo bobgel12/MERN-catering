@@ -117,10 +117,10 @@ export default function ShippingAddressScreen() {
             controlId='date'>
             <Form.Label>Datum en tijd</Form.Label>
             <Form.Control
+              type='datetime-local'
               value={date}
               onChange={(e) => setDate(e.target.value)}
               required
-              placeholder='19 september 2022 om 19h'
             />
           </Form.Group>
           <div className='mb-3'>
