@@ -49,32 +49,27 @@ orderRouter.post(
     <h1>U heeft een nieuwe bestelling!</h1>
     <h3>Overzicht bestelling</h3>
     <p>
-    Bestelde gerechten: <br />
-    ${orderItems})
-    <br />
-    <br />
-    Bezorgadres: <br /> 
-    ${req.body.shippingAddress.fullName}<br /> 
-    ${req.body.shippingAddress.address}<br /> 
-    ${req.body.shippingAddress.postalCode} ${req.body.shippingAddress.city} <br /> 
-    ${req.body.shippingAddress.country}<br />
-    <br /> 
-    Reservatie:
-    <br />
-    <strong>Date: </strong> ${req.body.reservation.date} <br />
-    <br />
-    <strong>Naam: </strong> ${req.body.reservation.fullName} <br />
-    <br />
-    <strong>Bedrijf: </strong> ${req.body.reservation.company} <br />
-    <br />
-    <strong>Adres: </strong>
-    <br />
-    ${req.body.reservation.address}
-    <br />
-    ${req.body.reservation.postalCode} ${req.body.reservation.city}
-    <br />
-    <br />
-    <strong>Opmerkingen:</strong> ${req.body.reservation.comments}
+      Bestelde gerechten: <br />
+      ${JSON.stringify(orderItems)})
+      <br />
+      <br />
+      Bezorgadres: <br /> 
+      ${req.body.shippingAddress.fullName}<br /> 
+      ${req.body.shippingAddress.address}<br /> 
+      ${req.body.shippingAddress.postalCode} ${
+      req.body.shippingAddress.city} <br /> 
+      ${req.body.shippingAddress.country}<br />
+      <br /> 
+      Reservatie:
+      <br />
+      <strong>Date: </strong> ${req.body.reservation.date} <br />
+      <strong>Naam: </strong> ${req.body.reservation.fullName} <br />
+      <strong>Bedrijf: </strong> ${req.body.reservation.company} <br />
+      <strong>Adres: </strong><br />
+      ${req.body.reservation.address}<br />
+      ${req.body.reservation.postalCode} ${req.body.reservation.city}<br />
+      <br />
+      <strong>Opmerkingen:</strong> ${req.body.reservation.comments}
     </p>
 
     <h4>Betalingsoverzicht</h4>
