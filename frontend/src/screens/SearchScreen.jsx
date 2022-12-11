@@ -88,18 +88,18 @@ export default function SearchScreen() {
   return (
     <div>
       <Helmet>
-        <title>Catalogus</title>
+        <title>Catalog</title>
       </Helmet>
       <Row className='search-container'>
         <Col md={3}>
-          <h3 className='left'>Categoriën</h3>
+          <h3 className='left'>Categories</h3>
           <br />
           <div>
             <ul>
               <li>
                 <Link
                   to={getFilterUrl({ category: 'all' })}>
-                  Alle gerechten
+                  All dishes
                 </Link>
               </li>
               {categories.map((c) => (
@@ -127,7 +127,7 @@ export default function SearchScreen() {
               <Row className='justify-content-between mb-3'>
                 <Col md={6}>
                   <div>
-                    {countProducts === 0 ? 'Geen' : countProducts} resultaten
+                    {countProducts === 0 ? 'Geen' : countProducts} results
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
                     {query !== 'all' || category !== 'all' ? (
@@ -142,20 +142,20 @@ export default function SearchScreen() {
                   <br />
                 </Col>
                 <Col className='text-end'>
-                  Sorteren op{' '}
+                  Sort by{' '}
                   <select
                     value={order}
                     onChange={(e) => {
                       navigate(getFilterUrl({ order: e.target.value }))
                     }}>
-                    <option value='newest'>Recent toegevoegd</option>
-                    <option value='lowest'>Prijs: laag naar hoog</option>
-                    <option value='highest'>Prijs: hoog naar laag</option>
+                    <option value='newest'>Recently added</option>
+                    <option value='lowest'>Price: low to high</option>
+                    <option value='highest'>Price: high to low</option>
                   </select>
                 </Col>
               </Row>
               {products.length === 0 && (
-                <MessageBox>Geen gerechten gevonden</MessageBox>
+                <MessageBox>No dishes found</MessageBox>
               )}
 
               <Row>

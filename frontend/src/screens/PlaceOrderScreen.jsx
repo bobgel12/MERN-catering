@@ -157,7 +157,7 @@ export default function PlaceOrderScreen() {
 
           <Card className='mb-3'>
             <Card.Body>
-              <Card.Title>Gerechten</Card.Title>
+              <Card.Title>Dishes</Card.Title>
               <ListGroup variant='flush'>
                 {cart.cartItems.map((item) => (
                   <ListGroup.Item key={item._id}>
@@ -172,7 +172,7 @@ export default function PlaceOrderScreen() {
                       <Col md={3}>
                         <span>{item.quantity}</span>
                       </Col>
-                      <Col md={3}>€{item.price}</Col>
+                      <Col md={3}>${item.price}</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -196,7 +196,7 @@ export default function PlaceOrderScreen() {
                       <strong> Totaalprijs</strong>
                     </Col>
                     <Col>
-                      <strong>€{cart.totalPrice.toFixed(2)}</strong>
+                      <strong>${cart.totalPrice.toFixed(2)}</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>

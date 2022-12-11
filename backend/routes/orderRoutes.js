@@ -46,10 +46,11 @@ orderRouter.post(
     )
 
     const output = `
-    <h1>U heeft een nieuwe bestelling!</h1>
-    <h3>Overzicht bestelling</h3>
+    <h1>You have a new order!</h1>
+    <h3>Overview order</h3>
     <p>
-      Bestelde gerechten: <br />
+      Ordered dishes
+: <br />
       ${JSON.stringify(orderItems)})
       <br />
       <br />
@@ -75,7 +76,7 @@ orderRouter.post(
     <h4>Betalingsoverzicht</h4>
     <ul>
       <li>Betaalwijze: ${req.body.paymentMethod}</li>
-      <li><strong>Totaalprijs: €${req.body.totalPrice}</strong></li>
+      <li><strong>Totaalprijs: $${req.body.totalPrice}</strong></li>
     </ul>
     <h4>Gebruiker</h4>
     <ul>
@@ -100,9 +101,9 @@ orderRouter.post(
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: '"Kevins Catering Webshop" <de.laet.luna@gmail.com>', // sender address
+      from: '"Golden Chopstick Catering Webshop" <de.laet.luna@gmail.com>', // sender address
       to: 'luna.dl@hotmail.com', // list of receivers
-      subject: 'Nieuwe bestelling!', // Subject line
+      subject: 'New order!', // Subject line
       html: output, // html body
     })
 

@@ -67,7 +67,7 @@ const data = {
         'https://images.unsplash.com/photo-1607690424560-35d967d6ad7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWdnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
       description: 'Egg',
       price: 0.48,
-      category: 'voorgerechten',
+      category: 'appetizer',
       slug: 'egg',
     },
     {
@@ -77,7 +77,7 @@ const data = {
         'https://images.unsplash.com/photo-1660486965992-c921b45b7e65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
       description: 'yes',
       price: 0.48,
-      category: 'voorgerechten',
+      category: 'appetizer',
       slug: 'yes',
     },
   ],

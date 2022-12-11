@@ -41,18 +41,18 @@ const CartScreen = () => {
   return (
     <div>
       <Helmet>
-        <title>Winkelwagen</title>
+        <title>Shopping Cart</title>
       </Helmet>
-      <h1>Winkelwagen</h1>
+      <h1>Shopping Cart</h1>
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
             <MessageBox>
-              Je winkelwagen is leeg.{' '}
+              Your Shopping Cart is empty.{' '}
               <Link
                 to='/products'
                 className='bg-light p-2 rounded text-bold'>
-                Voeg gerechten toe
+                Add dishes
               </Link>
             </MessageBox>
           ) : (
@@ -70,7 +70,7 @@ const CartScreen = () => {
                     <Col md={4}>
                       <span>{item.quantity}</span>{' '}
                     </Col>
-                    <Col md={2}>€{item.price}</Col>
+                    <Col md={2}>${item.price}</Col>
                     <Col md={2}>
                       <Button
                         onClick={() => removeItemHandler(item)}
@@ -88,15 +88,15 @@ const CartScreen = () => {
           <Card>
             <Card.Body>
               <ListGroup variant='flush'>
-                {/* SUBTOTAAL */}
+                {/* SUBTOTAL */}
                 <ListGroup.Item>
                   <h3>
-                    Subtotaal (
+                    Subtotal (
                     {cartItems.reduce(
                       (accumulator, current) => accumulator + current.quantity,
                       0
                     )}{' '}
-                    items) : €
+                    items) : $
                     {cartItems.reduce(
                       (a, c) =>
                         a + parseFloat((c.price * c.quantity).toFixed(2)),
@@ -112,7 +112,7 @@ const CartScreen = () => {
                       variant='primary'
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}>
-                      Doorgaan naar bestellen
+                      Continue to order
                     </Button>
                     {/* 
                     {' '}

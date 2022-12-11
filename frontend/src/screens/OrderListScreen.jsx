@@ -90,9 +90,9 @@ export default function OrderListScreen() {
   return (
     <div>
       <Helmet>
-        <title>Bestellingen</title>
+        <title>Orders</title>
       </Helmet>
-      <h1>Bestellingen</h1>
+      <h1>Orders</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {loading ? (
         <LoadingBox></LoadingBox>

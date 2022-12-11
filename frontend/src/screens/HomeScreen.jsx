@@ -10,12 +10,12 @@ const HomeScreen = () => {
   return (
     <div>
       <Helmet>
-        <title>Kevins catering</title>
+        <title>Golden Chopstick Catering</title>
       </Helmet>
 
       <section className='home'>
-        <h1>KEVINS CATERING</h1>
-        <h3 className='home__text'>WIJ ZIJN OPEN</h3>
+        <h1>Golden Chopstick Catering</h1>
+        <h3 className='home__text'>Coming soon!</h3>
 
         <Button
           type='button'
@@ -24,7 +24,7 @@ const HomeScreen = () => {
           onClick={() => {
             navigate(`/search`)
           }}>
-          BESTEL ONLINE
+          Checkout our foods
         </Button>
       </section>
     </div>

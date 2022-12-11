@@ -51,7 +51,7 @@ const ProductScreen = (props) => {
     fetchData()
   }, [slug])
 
-  // form input qty (aantal porties toevoegen aan winkelwagen)
+  // form input qty (aantal porties toevoegen aan shopping cart)
   const [qty, setQty] = useState('')
   const updateQty = (event) => {
     setQty(event.target.value)
@@ -95,7 +95,7 @@ const ProductScreen = (props) => {
                 <ListGroup.Item>
                   <Row>
                     <Col>Prijs:</Col>
-                    <Col>€{product.price} per portie</Col>
+                    <Col>${product.price} per portie</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroupItem>
@@ -120,7 +120,7 @@ const ProductScreen = (props) => {
                       onClick={addToCartHandler}
                       variant='primary'
                       type='submit'>
-                      Toevoegen aan winkelwagen
+                      Toevoegen aan shopping cart
                     </Button>
                   </Form>
 

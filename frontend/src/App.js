@@ -62,7 +62,7 @@ function App() {
             expand='lg'>
             <Container>
               <LinkContainer to='/'>
-                <Navbar.Brand>KEVINS CATERING</Navbar.Brand>
+                <Navbar.Brand>Golden Chopstick Catering</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls='basic-navbar-nav' />
               <Navbar.Collapse id='basic-navbar-nav'>
@@ -72,12 +72,12 @@ function App() {
                   <Link
                     to='/search'
                     className='nav-link'>
-                    CATALOGUS
+                    CATALOG
                   </Link>
                   <Link
                     to='/cart'
                     className='nav-link'>
-                    WINKELWAGEN{' '}
+                    SHOPPING CART{' '}
                     <i className='fa-solid fa-cart-shopping fa-xl'></i>
                     {cart.cartItems.length > 0 && (
                       <Badge
@@ -102,17 +102,17 @@ function App() {
                       title={userInfo.name}
                       id='basic-nav-dropdown'>
                       <LinkContainer to='/profile'>
-                        <NavDropdown.Item>Mijn profiel</NavDropdown.Item>
+                        <NavDropdown.Item>My profile</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to='/orderhistory'>
-                        <NavDropdown.Item>Mijn bestellingen</NavDropdown.Item>
+                        <NavDropdown.Item>My orders</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
                         className='dropdown-item'
                         to='#signout'
                         onClick={signoutHandler}>
-                        Log uit
+                        Log out
                       </Link>
                     </NavDropdown>
                   ) : (
@@ -130,10 +130,10 @@ function App() {
                         <NavDropdown.Item>Admin dashboard</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to='/admin/products'>
-                        <NavDropdown.Item>Gerechten</NavDropdown.Item>
+                        <NavDropdown.Item>Dishes</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to='/admin/orders'>
-                        <NavDropdown.Item>Bestellingen</NavDropdown.Item>
+                        <NavDropdown.Item>Orders</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to='/admin/users'>
                         <NavDropdown.Item>Gebruikers</NavDropdown.Item>
